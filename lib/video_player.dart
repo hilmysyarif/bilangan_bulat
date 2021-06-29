@@ -19,8 +19,8 @@ class _BagianSatuState extends State<BagianSatu> {
   void initState() {
     super.initState();
 
-    playerController = VideoPlayerController.asset(
-      "assets/BAGIAN-A.mp4",
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=1yCFF_VRl4boaHs98wQL_x2kESq0xLyXF",
     );
 
     playerController.addListener(() {
@@ -110,8 +110,645 @@ class _BagianDuaState extends State<BagianDua> {
   void initState() {
     super.initState();
 
-    playerController = VideoPlayerController.asset(
-      "assets/BAGIAN-B.mp4",
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=13gRkBx-btYFmrsqlpARBD6D6Gf1d2NGX",
+    );
+
+    playerController.addListener(() {
+      setState(() {});
+    });
+    playerController.setLooping(false);
+    playerController.initialize().then((_) => setState(() {}));
+    playerController.play();
+    munculButton();
+  }
+
+  @override
+  void dispose() {
+    playerController.dispose();
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  munculButton() {
+    Future.delayed(
+        // Duration(seconds: 182),
+        Duration(seconds: 1),
+        () => setState(() {
+              isShowed = true;
+            }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    return new WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          body: Center(
+              child: AspectRatio(
+                  aspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                  child: Container(
+                    child: (playerController != null
+                        ? VideoPlayer(
+                            playerController,
+                          )
+                        : Container()),
+                  ))),
+          floatingActionButton: isShowed == false
+              ? Container()
+              : Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  child: FittedBox(
+                    child: FloatingActionButton(
+                        elevation: 0,
+                        backgroundColor: Color(0xFFFD6D6D),
+                        child: Icon(
+                          Icons.play_arrow,
+                          size: 36,
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BagianTiga()),
+                          );
+                        }),
+                  ),
+                ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        ));
+  }
+}
+
+class BagianTiga extends StatefulWidget {
+  const BagianTiga({Key? key}) : super(key: key);
+
+  @override
+  _BagianTigaState createState() => _BagianTigaState();
+}
+
+class _BagianTigaState extends State<BagianTiga> {
+  late VideoPlayerController playerController;
+  bool isShowed = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=1-H4VuoT3Q6LuUBVXFnIGB5lgyXjrci7L",
+    );
+
+    playerController.addListener(() {
+      setState(() {});
+    });
+    playerController.setLooping(false);
+    playerController.initialize().then((_) => setState(() {}));
+    playerController.play();
+    munculButton();
+  }
+
+  @override
+  void dispose() {
+    playerController.dispose();
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  munculButton() {
+    Future.delayed(
+        // Duration(seconds: 182),
+        Duration(seconds: 1),
+        () => setState(() {
+              isShowed = true;
+            }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    return new WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          body: Center(
+              child: AspectRatio(
+                  aspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                  child: Container(
+                    child: (playerController != null
+                        ? VideoPlayer(
+                            playerController,
+                          )
+                        : Container()),
+                  ))),
+          floatingActionButton: isShowed == false
+              ? Container()
+              : Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  child: FittedBox(
+                    child: FloatingActionButton(
+                        elevation: 0,
+                        backgroundColor: Color(0xFFFD6D6D),
+                        child: Icon(
+                          Icons.play_arrow,
+                          size: 36,
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BagianEmpat()),
+                          );
+                        }),
+                  ),
+                ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        ));
+  }
+}
+
+class BagianEmpat extends StatefulWidget {
+  const BagianEmpat({Key? key}) : super(key: key);
+
+  @override
+  _BagianEmpatState createState() => _BagianEmpatState();
+}
+
+class _BagianEmpatState extends State<BagianEmpat> {
+  late VideoPlayerController playerController;
+  bool isShowed = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=1UJGnP8Jk2KLloTeGFxoGM86m5V1O7SKn",
+    );
+
+    playerController.addListener(() {
+      setState(() {});
+    });
+    playerController.setLooping(false);
+    playerController.initialize().then((_) => setState(() {}));
+    playerController.play();
+    munculButton();
+  }
+
+  @override
+  void dispose() {
+    playerController.dispose();
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  munculButton() {
+    Future.delayed(
+        // Duration(seconds: 182),
+        Duration(seconds: 1),
+        () => setState(() {
+              isShowed = true;
+            }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    return new WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          body: Center(
+              child: AspectRatio(
+                  aspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                  child: Container(
+                    child: (playerController != null
+                        ? VideoPlayer(
+                            playerController,
+                          )
+                        : Container()),
+                  ))),
+          floatingActionButton: isShowed == false
+              ? Container()
+              : Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  child: FittedBox(
+                    child: FloatingActionButton(
+                        elevation: 0,
+                        backgroundColor: Color(0xFFFD6D6D),
+                        child: Icon(
+                          Icons.play_arrow,
+                          size: 36,
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BagianLima()),
+                          );
+                        }),
+                  ),
+                ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        ));
+  }
+}
+
+class BagianLima extends StatefulWidget {
+  const BagianLima({Key? key}) : super(key: key);
+
+  @override
+  _BagianLimaState createState() => _BagianLimaState();
+}
+
+class _BagianLimaState extends State<BagianLima> {
+  late VideoPlayerController playerController;
+  bool isShowed = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=1fpgDdw7RXduDewNt_ZatBeJXUpSg_sey",
+    );
+
+    playerController.addListener(() {
+      setState(() {});
+    });
+    playerController.setLooping(false);
+    playerController.initialize().then((_) => setState(() {}));
+    playerController.play();
+    munculButton();
+  }
+
+  @override
+  void dispose() {
+    playerController.dispose();
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  munculButton() {
+    Future.delayed(
+        // Duration(seconds: 182),
+        Duration(seconds: 1),
+        () => setState(() {
+              isShowed = true;
+            }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    return new WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          body: Center(
+              child: AspectRatio(
+                  aspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                  child: Container(
+                    child: (playerController != null
+                        ? VideoPlayer(
+                            playerController,
+                          )
+                        : Container()),
+                  ))),
+          floatingActionButton: isShowed == false
+              ? Container()
+              : Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  child: FittedBox(
+                    child: FloatingActionButton(
+                        elevation: 0,
+                        backgroundColor: Color(0xFFFD6D6D),
+                        child: Icon(
+                          Icons.play_arrow,
+                          size: 36,
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BagianEnam()),
+                          );
+                        }),
+                  ),
+                ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        ));
+  }
+}
+
+class BagianEnam extends StatefulWidget {
+  const BagianEnam({Key? key}) : super(key: key);
+
+  @override
+  _BagianEnamState createState() => _BagianEnamState();
+}
+
+class _BagianEnamState extends State<BagianEnam> {
+  late VideoPlayerController playerController;
+  bool isShowed = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=1vmwtK9qtXfNDVz1ZeNzge1Tfhe39Mj7M",
+    );
+
+    playerController.addListener(() {
+      setState(() {});
+    });
+    playerController.setLooping(false);
+    playerController.initialize().then((_) => setState(() {}));
+    playerController.play();
+    munculButton();
+  }
+
+  @override
+  void dispose() {
+    playerController.dispose();
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  munculButton() {
+    Future.delayed(
+        // Duration(seconds: 182),
+        Duration(seconds: 1),
+        () => setState(() {
+              isShowed = true;
+            }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    return new WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          body: Center(
+              child: AspectRatio(
+                  aspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                  child: Container(
+                    child: (playerController != null
+                        ? VideoPlayer(
+                            playerController,
+                          )
+                        : Container()),
+                  ))),
+          floatingActionButton: isShowed == false
+              ? Container()
+              : Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  child: FittedBox(
+                    child: FloatingActionButton(
+                        elevation: 0,
+                        backgroundColor: Color(0xFFFD6D6D),
+                        child: Icon(
+                          Icons.play_arrow,
+                          size: 36,
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BagianTujuh()),
+                          );
+                        }),
+                  ),
+                ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        ));
+  }
+}
+
+class BagianTujuh extends StatefulWidget {
+  const BagianTujuh({Key? key}) : super(key: key);
+
+  @override
+  _BagianTujuhState createState() => _BagianTujuhState();
+}
+
+class _BagianTujuhState extends State<BagianTujuh> {
+  late VideoPlayerController playerController;
+  bool isShowed = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=1Xu1A4Y1fifN_pRV4nFJgFT7ayO2CJFR4",
+    );
+
+    playerController.addListener(() {
+      setState(() {});
+    });
+    playerController.setLooping(false);
+    playerController.initialize().then((_) => setState(() {}));
+    playerController.play();
+    munculButton();
+  }
+
+  @override
+  void dispose() {
+    playerController.dispose();
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  munculButton() {
+    Future.delayed(
+        // Duration(seconds: 182),
+        Duration(seconds: 1),
+        () => setState(() {
+              isShowed = true;
+            }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    return new WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          body: Center(
+              child: AspectRatio(
+                  aspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                  child: Container(
+                    child: (playerController != null
+                        ? VideoPlayer(
+                            playerController,
+                          )
+                        : Container()),
+                  ))),
+          floatingActionButton: isShowed == false
+              ? Container()
+              : Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  child: FittedBox(
+                    child: FloatingActionButton(
+                        elevation: 0,
+                        backgroundColor: Color(0xFFFD6D6D),
+                        child: Icon(
+                          Icons.play_arrow,
+                          size: 36,
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BagianDelapan()),
+                          );
+                        }),
+                  ),
+                ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        ));
+  }
+}
+
+class BagianDelapan extends StatefulWidget {
+  const BagianDelapan({Key? key}) : super(key: key);
+
+  @override
+  _BagianDelapanState createState() => _BagianDelapanState();
+}
+
+class _BagianDelapanState extends State<BagianDelapan> {
+  late VideoPlayerController playerController;
+  bool isShowed = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=1mA_UsDLPGSD3lMzJ-kcZcOly4CCLwSkh",
+    );
+
+    playerController.addListener(() {
+      setState(() {});
+    });
+    playerController.setLooping(false);
+    playerController.initialize().then((_) => setState(() {}));
+    playerController.play();
+    munculButton();
+  }
+
+  @override
+  void dispose() {
+    playerController.dispose();
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  munculButton() {
+    Future.delayed(
+        // Duration(seconds: 182),
+        Duration(seconds: 1),
+        () => setState(() {
+              isShowed = true;
+            }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    return new WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          body: Center(
+              child: AspectRatio(
+                  aspectRatio: MediaQuery.of(context).size.width /
+                      MediaQuery.of(context).size.height,
+                  child: Container(
+                    child: (playerController != null
+                        ? VideoPlayer(
+                            playerController,
+                          )
+                        : Container()),
+                  ))),
+          floatingActionButton: isShowed == false
+              ? Container()
+              : Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  child: FittedBox(
+                    child: FloatingActionButton(
+                        elevation: 0,
+                        backgroundColor: Color(0xFFFD6D6D),
+                        child: Icon(
+                          Icons.play_arrow,
+                          size: 36,
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BagianSembilan()),
+                          );
+                        }),
+                  ),
+                ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        ));
+  }
+}
+
+class BagianSembilan extends StatefulWidget {
+  const BagianSembilan({Key? key}) : super(key: key);
+
+  @override
+  _BagianSembilanState createState() => _BagianSembilanState();
+}
+
+class _BagianSembilanState extends State<BagianSembilan> {
+  late VideoPlayerController playerController;
+  bool isShowed = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    playerController = VideoPlayerController.network(
+      "https://drive.google.com/uc?export=view&id=18Hq2PlKptWt-21_fH1OI5K8ffKjHZVYf",
     );
 
     playerController.addListener(() {
@@ -228,7 +865,7 @@ class Quis extends StatefulWidget {
 class _QuisState extends State<Quis> {
   final audios = <Audio>[
     Audio.network(
-      'https://drive.google.com/uc?export=view&id=1YEDMnIAxCc4EJphU1okgUrQzCLesEWL1',
+      'https://drive.google.com/uc?export=view&id=1ZTxpTFvB9LmpuMtY1LYlyNVKeI4GdsT2',
     ),
   ];
 
